@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { GraduationCap, LogIn, Shield, Eye, EyeOff } from 'lucide-react';
+import { ThemeToggle } from '../components/common/ThemeToggle';
 
 export interface LoginPageProps {
   onLoginSuccess?: (data: any) => void;
@@ -56,6 +57,10 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center p-4 relative overflow-hidden">
+      {/* Floating Theme Toggle */}
+      <div className="absolute top-5 right-5 z-20">
+        <ThemeToggle variant="pill" />
+      </div>
       {/* Background Image with Dark Tint */}
       <div className="absolute inset-0 z-0">
         <img

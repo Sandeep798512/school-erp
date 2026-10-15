@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Users, GraduationCap, DollarSign, Calendar, Activity, School, Plus, LogOut, CheckCircle2, BookOpen } from 'lucide-react';
+import { ThemeToggle } from '../components/common/ThemeToggle';
 
 export interface DashboardPageProps {
   user: any;
@@ -48,6 +49,7 @@ export const DashboardPage = ({ user, onLogout }: DashboardPageProps) => {
         </div>
 
         <div className="flex items-center space-x-3">
+          <ThemeToggle variant="icon" />
           <button
             onClick={onLogout}
             className="flex items-center space-x-2 px-4 py-2 bg-red-600/20 hover:bg-red-600/30 border border-red-500/30 text-red-400 text-sm font-semibold rounded-lg transition"

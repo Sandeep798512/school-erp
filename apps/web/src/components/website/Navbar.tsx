@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { GraduationCap, LogIn, Menu, X } from 'lucide-react';
+import { ThemeToggle } from '../common/ThemeToggle';
 
 export interface NavbarProps {
   onNavigateLogin: () => void;
@@ -53,7 +54,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateLogin, onScrollTo }) =
         </nav>
 
         {/* Right CTA */}
-        <div className="hidden sm:flex items-center space-x-4">
+        <div className="hidden sm:flex items-center space-x-3">
+          <ThemeToggle variant="icon" />
           <button
             onClick={onNavigateLogin}
             className="flex items-center space-x-2 px-5 py-2.5 bg-gradient-to-r from-brand-600 to-blue-600 hover:from-brand-500 hover:to-blue-500 text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg shadow-brand-600/25 transition duration-300 hover:scale-[1.02]"
@@ -63,8 +65,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateLogin, onScrollTo }) =
           </button>
         </div>
 
-        {/* Mobile Hamburger Button */}
+        {/* Mobile Hamburger & Quick Theme Button */}
         <div className="lg:hidden flex items-center space-x-2">
+          <ThemeToggle variant="compact" />
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white"
@@ -87,7 +90,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateLogin, onScrollTo }) =
             <button onClick={() => handleNavClick('news')} className="text-left py-2 hover:text-brand-400">News & Events</button>
             <button onClick={() => handleNavClick('contact')} className="text-left py-2 hover:text-brand-400">Contact</button>
           </nav>
-          <div className="pt-4 border-t border-slate-800">
+          <div className="pt-4 border-t border-slate-800 flex items-center justify-between">
+            <span className="text-xs text-slate-400 font-semibold">Theme Mode</span>
+            <ThemeToggle variant="pill" />
+          </div>
+          <div className="pt-2">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
