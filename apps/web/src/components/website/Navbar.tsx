@@ -45,6 +45,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateLogin, onScrollTo }) =
           <button onClick={() => handleNavClick('about')} className="hover:text-brand-400 transition">About</button>
           <button onClick={() => handleNavClick('academics')} className="hover:text-brand-400 transition">Academics</button>
           <button onClick={() => handleNavClick('facilities')} className="hover:text-brand-400 transition">Facilities</button>
+          <button onClick={() => handleNavClick('fees')} className="hover:text-brand-400 transition">Fee Structure</button>
           <button onClick={() => handleNavClick('gallery')} className="hover:text-brand-400 transition">Campus Life</button>
           <button onClick={() => handleNavClick('admissions')} className="hover:text-brand-400 transition">Admissions</button>
           <button onClick={() => handleNavClick('news')} className="hover:text-brand-400 transition">Events</button>
@@ -80,6 +81,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateLogin, onScrollTo }) =
             <button onClick={() => handleNavClick('about')} className="text-left py-2 hover:text-brand-400">About Us</button>
             <button onClick={() => handleNavClick('academics')} className="text-left py-2 hover:text-brand-400">Academics</button>
             <button onClick={() => handleNavClick('facilities')} className="text-left py-2 hover:text-brand-400">Facilities</button>
+            <button onClick={() => handleNavClick('fees')} className="text-left py-2 hover:text-brand-400">Fee Structure</button>
             <button onClick={() => handleNavClick('gallery')} className="text-left py-2 hover:text-brand-400">Campus Life</button>
             <button onClick={() => handleNavClick('admissions')} className="text-left py-2 hover:text-brand-400">Admissions</button>
             <button onClick={() => handleNavClick('news')} className="text-left py-2 hover:text-brand-400">News & Events</button>

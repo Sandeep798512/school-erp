@@ -53,6 +53,7 @@ export const Footer: React.FC = () => {
             <h4 className="text-white text-xs font-bold uppercase tracking-wider">Admissions & ERP</h4>
             <ul className="space-y-2 text-slate-400">
               <li><a href="#admissions" className="hover:text-brand-400 transition">Admissions 2026-27</a></li>
+              <li><a href="#fees" className="hover:text-brand-400 transition">Fee Structure & Aid</a></li>
               <li><a href="#admissions" className="hover:text-brand-400 transition">Campus Tours Booking</a></li>
               <li><a href="#about" className="hover:text-brand-400 transition">Principal's Welcome</a></li>
               <li><a href="#contact" className="hover:text-brand-400 transition">Directorate Contact</a></li>

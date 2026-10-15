@@ -4,6 +4,7 @@ import { HeroSection } from '../components/website/HeroSection';
 import { PrincipalMessage } from '../components/website/PrincipalMessage';
 import { AcademicsSection } from '../components/website/AcademicsSection';
 import { FacilitiesSection } from '../components/website/FacilitiesSection';
+import { FeeStructureSection } from '../components/website/FeeStructureSection';
 import { CampusLifeGallery } from '../components/website/CampusLifeGallery';
 import { TestimonialsSection } from '../components/website/TestimonialsSection';
 import { AdmissionsSection } from '../components/website/AdmissionsSection';
@@ -39,6 +40,7 @@ export const PublicWebsitePage: React.FC<PublicWebsitePageProps> = ({ onNavigate
         <PrincipalMessage />
         <AcademicsSection />
         <FacilitiesSection />
+        <FeeStructureSection />
         <CampusLifeGallery />
         <TestimonialsSection />
         <AdmissionsSection />
