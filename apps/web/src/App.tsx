@@ -22,47 +22,49 @@ export const App: React.FC = () => {
   return (
     <ThemeProvider>
       <div className="min-h-screen transition-colors duration-300">
-        {/* View Switcher Bar for Development & Testing */}
-        <nav className="bg-slate-900 border-b border-slate-800 px-6 py-2 flex justify-between items-center text-xs">
-          <div className="flex items-center space-x-4">
-            <button
-              onClick={() => setCurrentView('home')}
-              className={`font-semibold ${currentView === 'home' ? 'text-brand-400' : 'text-slate-400 hover:text-white'}`}
-            >
-              Public Website
-            </button>
-            <button
-              onClick={() => setCurrentView('login')}
-              className={`font-semibold ${currentView === 'login' ? 'text-brand-400' : 'text-slate-400 hover:text-white'}`}
-            >
-              Portal Login
-            </button>
-            {userData && (
+        {/* View Switcher Bar for Development & Testing (shown on login/dashboard) */}
+        {currentView !== 'home' && (
+          <nav className="bg-slate-900 border-b border-slate-800 px-6 py-2.5 flex justify-between items-center text-xs">
+            <div className="flex items-center space-x-4">
               <button
-                onClick={() => setCurrentView('dashboard')}
-                className={`font-semibold ${currentView === 'dashboard' ? 'text-brand-400' : 'text-slate-400 hover:text-white'}`}
+                onClick={() => setCurrentView('home')}
+                className="font-semibold text-brand-400 hover:text-brand-300 flex items-center space-x-1"
               >
-                ERP Dashboard
+                <span>← Public Website</span>
               </button>
-            )}
-          </div>
-
-          <div className="flex items-center space-x-3">
-            <ThemeToggle variant="compact" />
-            {userData ? (
-              <div className="text-slate-400">
-                Authenticated as: <span className="text-white font-mono">{userData.email}</span>
-              </div>
-            ) : (
               <button
                 onClick={() => setCurrentView('login')}
-                className="px-3 py-1 bg-brand-600 hover:bg-brand-500 text-white rounded font-medium transition"
+                className={`font-semibold ${currentView === 'login' ? 'text-white' : 'text-slate-400 hover:text-white'}`}
               >
-                Sign In to ERP Portal
+                Portal Login
               </button>
-            )}
-          </div>
-        </nav>
+              {userData && (
+                <button
+                  onClick={() => setCurrentView('dashboard')}
+                  className={`font-semibold ${currentView === 'dashboard' ? 'text-white' : 'text-slate-400 hover:text-white'}`}
+                >
+                  ERP Dashboard
+                </button>
+              )}
+            </div>
+
+            <div className="flex items-center space-x-3">
+              <ThemeToggle variant="compact" />
+              {userData ? (
+                <div className="text-slate-400">
+                  Authenticated as: <span className="text-white font-mono">{userData.email}</span>
+                </div>
+              ) : (
+                <button
+                  onClick={() => setCurrentView('login')}
+                  className="px-3 py-1 bg-brand-600 hover:bg-brand-500 text-white rounded font-medium transition"
+                >
+                  Sign In to ERP Portal
+                </button>
+              )}
+            </div>
+          </nav>
+        )}
 
         {/* Main View Renderer */}
         {currentView === 'home' && <HomePage onNavigateLogin={() => setCurrentView('login')} />}
