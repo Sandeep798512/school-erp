@@ -1,4 +1,10 @@
-import { ApiResponse } from '@school-erp/shared';
+export interface ApiResponse<T = any> {
+  success: boolean;
+  data?: T;
+  message?: string;
+  error?: string;
+  detail?: string;
+}
 
 export class ApiClient {
   private static baseUrl = '/api/v1';
