@@ -10,8 +10,9 @@
   "scripts": {
     "dev:api": "npm run dev --workspace=apps/api",
     "dev:web": "npm run dev --workspace=apps/web",
-    "build": "npm run build --workspaces --if-present",
-    "build:web": "npm run build --workspace=apps/web",
+    "build": "node scripts/build-web.js",
+    "build:web": "node scripts/build-web.js",
+    "build:all": "npm run build --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "test": "npm run test --workspaces --if-present"
